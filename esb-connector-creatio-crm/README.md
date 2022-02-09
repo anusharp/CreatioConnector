@@ -32,26 +32,54 @@ Follow the steps given below to build the Class mediation whihc is dependecy lib
 
 1. Add connector creatiocrm-connector-1.1.0.zip to Intergration Studio inorder to work with EI tooling, see [Working with Connectors via Tooling](https://docs.wso2.com/display/EI650/Working+with+Connectors+via+Tooling) and create the mediation
 
-2. Deploy the car app to <EI-HOME>/micro-integrator/repository/deployment/server/carbonapps folder in WSO2 EI 
+2. Import the creatio server certificate to the EI client keystore using either the following command or the EI Management Console.
 
-3. Add the configurtaion in deployment.toml for Creatio login infomrtaion
+```
+keytool -importcert -file <certificate_file> -keystore <EI>/repository/resources/security/client-truststore.jks -alias "creatio"
+
+```
+
+3. Deploy the car app to <EI-HOME>/micro-integrator/repository/deployment/server/carbonapps folder in WSO2 EI
+
+4. Add the configurtaion in deployment.toml for Creatio login infomrtaion
+[system.parameter]
+isEncryptedCreatioConfig = "false"
+creatioCRMUName = "xxxxxxx"
+creatioCRMPWord = "xxxxxxxxx"
+creatioCRMEP = "hostname"
+
+ex:
+[system.parameter]
+isEncryptedCreatioConfig = "false"
+creatioCRMUName = "admin"
+creatioCRMPWord = "admin"
+creatioCRMEP = "https://112755-crm-bundle.creatio.com"
+
+If the above configuration want to encrypt, use below configurtaion
+
+[system.parameter]
+isEncryptedCreatioConfig = "true"
 
 [secrets]
-creatioCRMUName  = “[user_name]”
-creatioCRMPWord  = “[pasword]”
-creatioCRMEP = “[hostname]”
+creatioCRMUName  = "[user_name]"
+creatioCRMPWord  = "[pasword]"
+creatioCRMEP = "[hostname]"
 Ex:
+
+[system.parameter]
+isEncryptedCreatioConfig = "true"
+
 [secrets]
 creatioCRMUName  = "[admin]"
 creatioCRMPWord  = "[1qaz2wsx&]"
 creatioCRMEP = "[https://112744-crm-bundle.creatio.com]"
 
-4. Execute the below command encrypt the above config values ./ciphertool.sh -Dconfigure, provide the passowrd of wso2carbon.jks, default value is 'wso2carbon'
+5. Execute the below command encrypt the above config values ./ciphertool.sh -Dconfigure, provide the passowrd of wso2carbon.jks, default value is 'wso2carbon' if encrypted values need to be configured.
 
-5. Start the WSO2 EI instanace like this, you need to provide the passowrd of wso2carbon.jks at the execution, default value is 'wso2carbon'
+6. Start the WSO2 EI instanace like this. (you need to provide the passowrd of wso2carbon.jks at the execution, default value is 'wso2carbon' if values are encrypted )
 
 	./micro-integrator.sh
-6. Send the sample request to created mediation using CreatioCRM connector.
+7. Send the sample request to created mediation using CreatioCRM connector.
 
 ## Headers
 

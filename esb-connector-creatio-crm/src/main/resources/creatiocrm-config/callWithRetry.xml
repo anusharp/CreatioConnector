@@ -7,7 +7,7 @@
                 <target property="ORIGINAL_MSG_PAYLOAD" type="property"/>
             </enrich>
         </filter>
-        <log description="header" level="full">
+        <log description="header" level="custom">
             <property expression="$ctx:callEndpointUri" name="callEndpointUri......"/>
         </log>
         <filter source="boolean($ctx:authCookie)" regex="true">
@@ -21,7 +21,7 @@
         </filter>
         <property name="uri.var.callCreatioEndpointUri" expression="fn:concat(get-property('creatioCRMHostName'),$ctx:callEndpointUri)"/>
         <creatiocrm.callOptions/>
-        <log description="header" level="full">
+        <log description="header" level="custom">
             <property expression="$axis2:HTTP_SC" name="HttpStatus....."/>
         </log>
         <property name="httpCode" expression="$axis2:HTTP_SC" scope="default" type="STRING"/>

@@ -3,9 +3,6 @@
     <sequence>
         <property name="callEndpointUri" value="/0/odata/Case"/>
         <property name="httpMethod" value="post"/>
-        <log description="header" level="full">
-            <property expression="$ctx:callEndpointUri" name="Within the Case page....."/>
-        </log>
         <creatiocrm.callWithRetry/>
     </sequence>
 </template>

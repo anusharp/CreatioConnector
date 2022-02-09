@@ -7,7 +7,7 @@
         <property name="uri.var.timeout" scope="default" type="STRING" value="10000"/>
         <property expression="fn:concat(get-property('creatioCRMHostName'), '/ServiceModel/AuthService.svc/Login')"
                   name="uri.var.authEndpointUrl" scope="default" type="STRING"/>
-        <log description="header" level="full">
+        <log description="header" level="custom">
             <property expression="$ctx:uri.var.authEndpointUrl" name="uri.var.authEndpointUrl......"/>
         </log>
         <script language="js"><![CDATA[var timeout = mc.getProperty("uri.var.timeout");
@@ -46,7 +46,7 @@
                         <property expression="$ctx:authCookie" name="authHeader" scope="default" type="STRING"/>
                     </then>
                     <else>
-                        <log description="header" level="full">
+                        <log description="header" level="custom">
                             <property expression="$ctx:authCookie" name="Auth cookie is not found"/>
                         </log>
                     </else>

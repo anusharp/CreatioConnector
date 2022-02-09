@@ -1,8 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <template name="init" xmlns="http://ws.apache.org/ns/synapse">
     <sequence>
-        <property expression="wso2:vault-lookup('creatioCRMEP')" name="creatioCRMHostName"/>
-        <property expression="wso2:vault-lookup('creatioCRMPWord')" name="creatioCRMPassword"/>
-        <property expression="wso2:vault-lookup('creatioCRMUName')" name="creatioCRMUsername"/>
+
+        <property expression="get-property('system', 'isEncryptedCreatioConfig')" name="isEncryptedCreatioConfig"/>
+        <filter source="$ctx:isEncryptedCreatioConfig" regex="true">
+            <then>
+                <property expression="wso2:vault-lookup('creatioCRMEP')" name="creatioCRMHostName"/>
+                <property expression="wso2:vault-lookup('creatioCRMPWord')" name="creatioCRMPassword"/>
+                <property expression="wso2:vault-lookup('creatioCRMUName')" name="creatioCRMUsername"/>
+            </then>
+            <else>
+                <property expression="get-property('system', 'creatioCRMEP')" name="creatioCRMHostName"/>
+                <property expression="get-property('system', 'creatioCRMPWord')" name="creatioCRMPassword"/>
+                <property expression="get-property('system', 'creatioCRMUName')" name="creatioCRMUsername"/>
+            </else>
+        </filter>
+        <log description="config" level="custom">
+            <property expression="$ctx:creatioCRMHostName" name="creatioCRMHostName......."/>
+            <property expression="$ctx:isEncryptedCreatioConfig" name="isEncryptedCreatioConfig......."/>
+        </log>
+
     </sequence>
 </template>
