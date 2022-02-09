@@ -8,8 +8,6 @@
         <property expression="fn:concat(get-property('creatioCRMHostName'), '/ServiceModel/AuthService.svc/Login')"
                   name="uri.var.authEndpointUrl" scope="default" type="STRING"/>
         <log description="header" level="full">
-            <property expression="$ctx:creatioCRMUsername" name="host Name....."/>
-            <property expression="$ctx:creatioCRMPassword" name="username....."/>
             <property expression="$ctx:uri.var.authEndpointUrl" name="uri.var.authEndpointUrl......"/>
         </log>
         <script language="js"><![CDATA[var timeout = mc.getProperty("uri.var.timeout");
@@ -44,25 +42,17 @@
                 </call>
                 <filter source="$axis2:HTTP_SC" regex="200">
                     <then>
-                        <log description="header" level="full">
-                            <property expression="$ctx:authCookie" name="Within IF **************"/>
-                        </log>
                         <class description="Set the BPMCSRF value to authCookie" name="com.mitra.creatiocrm.headers.BPMCSRFCookie"/>
                         <property expression="$ctx:authCookie" name="authHeader" scope="default" type="STRING"/>
                     </then>
                     <else>
                         <log description="header" level="full">
-                            <property expression="$ctx:authCookie" name="Within ELSE **************"/>
+                            <property expression="$ctx:authCookie" name="Auth cookie is not found"/>
                         </log>
-                        <respond/>
                     </else>
                 </filter>
             </then>
             <else/>
         </filter>
-        <log description="header" level="full">
-            <property expression="$ctx:authCookie" name="setCookieHeaderValue**************"/>
-            <property expression="$ctx:authCompleteCookie" name="authCompleteCookie**************"/>
-        </log>
     </sequence>
 </template>

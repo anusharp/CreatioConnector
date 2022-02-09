@@ -84,18 +84,7 @@
             </call>
         </filter>
         <log description="header" level="full">
-            <property expression="$ctx:uri.var.callCreatioEndpointUri" name="caller Endpoint Uri....."/>
-            <property expression="$axis2:HTTP_SC" name="Status....."/>
+             <property expression="$axis2:HTTP_SC" name="HTTP Status....."/>
         </log>
-        <filter source="$axis2:HTTP_SC" regex="403|401|302">
-            <then>
-                <log description="header" level="full">
-                    <property expression="$axis2:HTTP_SC" name="Within If....."/>
-                </log>
-            </then>
-            <else>
-                <respond/>
-            </else>
-        </filter>
     </sequence>
 </template>
