@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="ContactCreate" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <log level="custom">
+        <property name="Test_Log" value="Before_CreateContact"/>
+    </log>
+    <creatiocrm.contactCreate/>
+    <log level="custom">
+        <property name="After contactCreate" value="0000000000000"/>
+    </log>
+    <log level="full"/>
+    <payloadFactory media-type="json">
+        <format>{
+    "Name": "$1",
+    "AccountId": "$2",
+    "JobTitle": "$3",
+    "BirthDate": "$4",
+    "Phone": "$5",
+    "MobilePhone": $6,
+    "Email": "$7",
+    "Completeness": $8,
+    "Age": $9
+}</format>
+        <args>
+            <arg evaluator="json" expression="$.Name"/>
+            <arg evaluator="json" expression="$.AccountId"/>
+            <arg evaluator="json" expression="$.JobTitle"/>
+            <arg evaluator="json" expression="$.BirthDate"/>
+            <arg evaluator="json" expression="$.Phone"/>
+            <arg evaluator="json" expression="$.MobilePhone"/>
+            <arg evaluator="json" expression="$.Email"/>
+            <arg evaluator="json" expression="$.Completeness"/>
+            <arg evaluator="json" expression="$.Age"/>
+        </args>
+    </payloadFactory>
+    <log level="full"/>
+    <respond/>
+</sequence>

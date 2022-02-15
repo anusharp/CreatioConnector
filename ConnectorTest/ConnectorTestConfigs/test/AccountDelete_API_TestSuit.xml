@@ -1,0 +1,31 @@
+<unit-test>
+    <artifacts>
+        <test-artifact>
+            <artifact>/ConnectorTestConfigs/src/main/synapse-config/api/ConnectorTest_Contact_API.xml</artifact>
+        </test-artifact>
+        <supportive-artifacts/>
+        <registry-resources/>
+        <connector-resources>
+            <connector-resource>/ConnectorTestExporter/creatiocrm-connector-1.1.0.zip</connector-resource>
+        </connector-resources>
+    </artifacts>
+    <test-cases>
+        <test-case name="AccountDelete_API_TestCase">
+            <input>
+                <request-path>/account/5168769e-d974-4b52-a1a9-367b18a48fbf</request-path>
+                <request-method>DELETE</request-method>
+                <properties>
+                    <property name="Content-Type" scope="transport" value="application/json"/>
+                </properties>
+            </input>
+            <assertions>
+                <assertEquals>
+                    <actual>$statusCode</actual>
+                    <expected><![CDATA[204]]></expected>
+                    <message>Account Delete Is Invalid</message>
+                </assertEquals>
+            </assertions>
+        </test-case>
+    </test-cases>
+    <mock-services/>
+</unit-test>

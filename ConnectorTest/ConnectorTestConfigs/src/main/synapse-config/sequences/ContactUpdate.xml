@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="ContactUpdate" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <log/>
+    <creatiocrm.contactUpdate>
+        <id>{$ctx:uri.var.id}</id>
+    </creatiocrm.contactUpdate>
+    <log level="custom">
+        <property name="After Payload" value="Contact Update1"/>
+        <property expression="get-property('httpCode')" name="check"/>
+    </log>
+    <respond/>
+</sequence>

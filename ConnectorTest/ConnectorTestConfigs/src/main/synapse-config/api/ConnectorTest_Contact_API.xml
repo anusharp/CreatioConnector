@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/contact1" name="ConnectorTest_Contact_API" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST" uri-template="/contact">
+        <inSequence>
+            <sequence key="ContactCreate"/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+    <resource methods="GET" uri-template="/contact/{id}">
+        <inSequence>
+            <sequence key="ContactGet"/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+    <resource methods="PUT PATCH" uri-template="/contact/{id}">
+        <inSequence>
+            <sequence key="ContactUpdate"/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+    <resource methods="DELETE" uri-template="/contact/{id}">
+        <inSequence>
+            <sequence key="ContactDelete"/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+    <resource methods="GET" uri-template="/case/{id}">
+        <inSequence>
+            <creatiocrm.caseGet>
+                <id>{$ctx:uri.var.id}</id>
+            </creatiocrm.caseGet>
+            <log level="full"/>
+            <payloadFactory media-type="json">
+                <format>{
+    "Number": "$1",
+    "RegisteredOn": "$2",
+    "Subject": "$3",
+    "Symptoms": "$4",
+    "Notes": "$5",
+    "AccountId": "$6",
+    "ContactId": "$7",
+    "SolutionRemains": $8
+}</format>
+                <args>
+                    <arg evaluator="json" expression="$.Number"/>
+                    <arg evaluator="json" expression="$.RegisteredOn"/>
+                    <arg evaluator="json" expression="$.Subject"/>
+                    <arg evaluator="json" expression="$.Symptoms"/>
+                    <arg evaluator="json" expression="$.Notes"/>
+                    <arg evaluator="json" expression="$.AccountId"/>
+                    <arg evaluator="json" expression="$.ContactId"/>
+                    <arg evaluator="json" expression="$.SolutionRemains"/>
+                </args>
+            </payloadFactory>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+    <resource methods="POST" uri-template="/case">
+        <inSequence>
+            <log level="full"/>
+            <creatiocrm.caseCreate/>
+            <log level="full"/>
+            <payloadFactory media-type="json">
+                <format>{
+    "Number": "$1",
+    "RegisteredOn": "$2",
+    "Subject": "$3",
+    "Symptoms": "$4",
+    "Notes": "$5",
+    "AccountId": "$6",
+    "ContactId": "$7",
+    "SolutionRemains": $8
+}
+</format>
+                <args>
+                    <arg evaluator="json" expression="$.Number"/>
+                    <arg evaluator="json" expression="$.RegisteredOn"/>
+                    <arg evaluator="json" expression="$.Subject"/>
+                    <arg evaluator="json" expression="$.Symptoms"/>
+                    <arg evaluator="json" expression="$.Notes"/>
+                    <arg evaluator="json" expression="$.AccountId"/>
+                    <arg evaluator="json" expression="$.ContactId"/>
+                    <arg evaluator="json" expression="$.SolutionRemains"/>
+                </args>
+            </payloadFactory>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+    <resource methods="DELETE" uri-template="/case/{id}">
+        <inSequence>
+            <log level="full"/>
+            <creatiocrm.caseDelete>
+                <id>{$ctx:uri.var.id}</id>
+            </creatiocrm.caseDelete>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+    <resource methods="PUT PATCH" uri-template="/case/{id}">
+        <inSequence>
+            <log level="full"/>
+            <creatiocrm.caseUpdate>
+                <id>{$ctx:uri.var.id}</id>
+            </creatiocrm.caseUpdate>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+    <resource methods="GET" uri-template="/account/{id}">
+        <inSequence>
+            <creatiocrm.accountGet>
+                <id>{$ctx:uri.var.id}</id>
+            </creatiocrm.accountGet>
+            <log level="full"/>
+            <payloadFactory media-type="json">
+                <format>{
+    "Name": "$1",
+    "ProcessListeners": $2,
+    "Code": "$3",
+    "Phone": "$4",
+    "AdditionalPhone": "$5",
+    "Fax": "$6",
+    "Web": "$7",
+    "Address": "$8",
+    "Notes": "$9"
+}</format>
+                <args>
+                    <arg evaluator="json" expression="$.Name"/>
+                    <arg evaluator="json" expression="$.ProcessListeners"/>
+                    <arg evaluator="json" expression="$.Code"/>
+                    <arg evaluator="json" expression="$.Phone"/>
+                    <arg evaluator="json" expression="$.AdditionalPhone"/>
+                    <arg evaluator="json" expression="$.Fax"/>
+                    <arg evaluator="json" expression="$.Web"/>
+                    <arg evaluator="json" expression="$.Address"/>
+                    <arg evaluator="json" expression="$.Notes"/>
+                </args>
+            </payloadFactory>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+    <resource methods="POST" uri-template="/account">
+        <inSequence>
+            <log level="full"/>
+            <creatiocrm.accountCreate/>
+            <log level="full"/>
+            <payloadFactory media-type="json">
+                <format>{
+    "Name": "$1",
+    "ProcessListeners": $2,
+    "Code": "$3",
+    "Phone": "$4",
+    "AdditionalPhone": "$5",
+    "Fax": "$6",
+    "Web": "$7",
+    "Address": "$8",
+    "Notes": "$9"
+}</format>
+                <args>
+                    <arg evaluator="json" expression="$.Name"/>
+                    <arg evaluator="json" expression="$.ProcessListeners"/>
+                    <arg evaluator="json" expression="$.Code"/>
+                    <arg evaluator="json" expression="$.Phone"/>
+                    <arg evaluator="json" expression="$.AdditionalPhone"/>
+                    <arg evaluator="json" expression="$.Fax"/>
+                    <arg evaluator="json" expression="$.Web"/>
+                    <arg evaluator="json" expression="$.Address"/>
+                    <arg evaluator="json" expression="$.Notes"/>
+                </args>
+            </payloadFactory>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+    <resource methods="DELETE" uri-template="/account/{id}">
+        <inSequence>
+            <log level="full"/>
+            <creatiocrm.accountDelete>
+                <id>{$ctx:uri.var.id}</id>
+            </creatiocrm.accountDelete>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+    <resource methods="PUT PATCH" uri-template="/account/{id}">
+        <inSequence>
+            <sequence key="AccountUpdate"/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

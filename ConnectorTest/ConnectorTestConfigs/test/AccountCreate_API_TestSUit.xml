@@ -1,0 +1,52 @@
+<unit-test>
+    <artifacts>
+        <test-artifact>
+            <artifact>/ConnectorTestConfigs/src/main/synapse-config/api/ConnectorTest_Contact_API.xml</artifact>
+        </test-artifact>
+        <supportive-artifacts/>
+        <registry-resources/>
+        <connector-resources>
+            <connector-resource>/ConnectorTestExporter/creatiocrm-connector-1.1.0.zip</connector-resource>
+        </connector-resources>
+    </artifacts>
+    <test-cases>
+        <test-case name="AccountCreate_API_TestCase">
+            <input>
+                <request-path>/account/</request-path>
+                <request-method>POST</request-method>
+                <payload><![CDATA[{
+    "Name": "API Test",
+    "ProcessListeners": 0,
+    "Code": "73",
+    "Phone": "+1 206 480 3801",
+    "AdditionalPhone": "+1 206 480 4495",
+    "Fax": "",
+    "Web": "www.infocom-global.com",
+    "Address": "48 Pilgrim Street",
+    "Notes": ""
+}]]></payload>
+                <properties>
+                    <property name="Content-Type" scope="transport" value="application/json"/>
+                </properties>
+            </input>
+            <assertions>
+                <assertEquals>
+                    <actual>$body</actual>
+                    <expected><![CDATA[{
+    "Name": "API Test",
+    "ProcessListeners": 0,
+    "Code": "73",
+    "Phone": "+1 206 480 3801",
+    "AdditionalPhone": "+1 206 480 4495",
+    "Fax": "",
+    "Web": "www.infocom-global.com",
+    "Address": "48 Pilgrim Street",
+    "Notes": ""
+}]]></expected>
+                    <message>Account Create Is Invalid</message>
+                </assertEquals>
+            </assertions>
+        </test-case>
+    </test-cases>
+    <mock-services/>
+</unit-test>

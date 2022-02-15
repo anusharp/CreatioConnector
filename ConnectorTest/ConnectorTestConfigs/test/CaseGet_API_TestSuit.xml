@@ -1,0 +1,40 @@
+<unit-test>
+    <artifacts>
+        <test-artifact>
+            <artifact>/ConnectorTestConfigs/src/main/synapse-config/api/ConnectorTest_Contact_API.xml</artifact>
+        </test-artifact>
+        <supportive-artifacts/>
+        <registry-resources/>
+        <connector-resources>
+            <connector-resource>/ConnectorTestExporter/creatiocrm-connector-1.1.0.zip</connector-resource>
+        </connector-resources>
+    </artifacts>
+    <test-cases>
+        <test-case name="CaseGet_TestCase">
+            <input>
+                <request-path>/case/d22de2c8-bb08-4e8c-8d54-7f0ed896f4b8</request-path>
+                <request-method>GET</request-method>
+                <properties>
+                    <property name="Content-Type" scope="transport" value="json"/>
+                </properties>
+            </input>
+            <assertions>
+                <assertEquals>
+                    <actual>$body</actual>
+                    <expected><![CDATA[{
+    "Number": "SR00000045",
+    "RegisteredOn": "2021-07-16T12:00:00Z",
+    "Subject": "Consultation on functionality",
+    "Symptoms": "Comparison of different DBMS in accordance with the customer's needs",
+    "Notes": "",
+    "AccountId": "ff7e089f-1fe9-4ca9-bc30-2d76ad39d178",
+    "ContactId": "00b34750-2feb-4545-b233-153502326f3c",
+    "SolutionRemains": 0.0
+}]]></expected>
+                    <message>Case Get Connector Is Not Working</message>
+                </assertEquals>
+            </assertions>
+        </test-case>
+    </test-cases>
+    <mock-services/>
+</unit-test>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="AccountUpdate" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <log/>
+    <creatiocrm.accountUpdate>
+        <id>{$ctx:uri.var.id}</id>
+    </creatiocrm.accountUpdate>
+    <property expression="$axis2:HTTP_SC" name="httpCode" scope="default" type="STRING"/>
+    <respond/>
+</sequence>
