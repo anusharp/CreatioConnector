@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><artifacts>
-    <artifact name="creatiocrm-connector" groupId="com.example.lib" version="1.1.0" type="synapse/lib" serverRole="EnterpriseServiceBus">
-        <file>creatiocrm-connector-1.1.0.zip</file>
-    </artifact>
-</artifacts>

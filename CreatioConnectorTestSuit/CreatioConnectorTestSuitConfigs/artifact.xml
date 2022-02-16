@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="CreatioConnectorTestSuit" groupId="testsuit.creatioconnetor.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/CreatioConnectorTestSuit.xml</file>
+    </artifact>
+    <artifact name="CreatioConnectorTestSuit_swagger" groupId="testsuit.creatioconnetor.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/CreatioConnectorTestSuit_swagger.yaml</file>
+    </artifact>
+    <artifact name="CreatioConnectorTestSuit_metadata" groupId="testsuit.creatioconnetor.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/CreatioConnectorTestSuit_metadata.yaml</file>
+    </artifact>
+    <artifact name="CreatioConnectorTestSuit_ContactUpdate_Sequence" groupId="testsuit.creatioconnetor.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/CreatioConnectorTestSuit_ContactUpdate_Sequence.xml</file>
+    </artifact>
+    <artifact name="CreatioConnectorTestSuit_ContactDelete_Sequence" groupId="testsuit.creatioconnetor.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/CreatioConnectorTestSuit_ContactDelete_Sequence.xml</file>
+    </artifact>
+    <artifact name="CreatioConnectorTestSuit_ContactCreate_Sequence" groupId="testsuit.creatioconnetor.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/CreatioConnectorTestSuit_ContactCreate_Sequence.xml</file>
+    </artifact>
+    <artifact name="CreatioConnectorTestSuit_AccountUpdate_Sequence" groupId="testsuit.creatioconnetor.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/CreatioConnectorTestSuit_AccountUpdate_Sequence.xml</file>
+    </artifact>
+    <artifact name="CreatioConnectorTestSuit_AccountCreate_Sequence" groupId="testsuit.creatioconnetor.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/CreatioConnectorTestSuit_AccountCreate_Sequence.xml</file>
+    </artifact>
+    <artifact name="CreatioConnectorTestSuit_AccountGet_Sequence" groupId="testsuit.creatioconnetor.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/CreatioConnectorTestSuit_AccountGet_Sequence.xml</file>
+    </artifact>
+    <artifact name="CreatioConnectorTestSuit_AccountDelete_Sequence" groupId="testsuit.creatioconnetor.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/CreatioConnectorTestSuit_AccountDelete_Sequence.xml</file>
+    </artifact>
+    <artifact name="CreatioConnectorTestSuit_CaseGet_Sequence" groupId="testsuit.creatioconnetor.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/CreatioConnectorTestSuit_CaseGet_Sequence.xml</file>
+    </artifact>
+    <artifact name="CreatioConnectorTestSuit_CaseCreate_Sequence" groupId="testsuit.creatioconnetor.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/CreatioConnectorTestSuit_CaseCreate_Sequence.xml</file>
+    </artifact>
+    <artifact name="CreatioConnectorTestSuit_CaseDelete_Sequence" groupId="testsuit.creatioconnetor.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/CreatioConnectorTestSuit_CaseDelete_Sequence.xml</file>
+    </artifact>
+    <artifact name="CreatioConnectorTestSuit_CaseUpdate_Sequence" groupId="testsuit.creatioconnetor.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/CreatioConnectorTestSuit_CaseUpdate_Sequence.xml</file>
+    </artifact>
+    <artifact name="CreatioConnectorTestSuit_ContactGet_Sequence" groupId="testsuit.creatioconnetor.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/CreatioConnectorTestSuit_ContactGet_Sequence.xml</file>
+    </artifact>
+    <artifact name="CreatioConnectorTestSuit_ContactDetails_Sequence" groupId="testsuit.creatioconnetor.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/CreatioConnectorTestSuit_ContactDetails_Sequence.xml</file>
+    </artifact>
+    <artifact name="CreatioConnectorTestSuit_AccountDetails_Sequence" groupId="testsuit.creatioconnetor.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/CreatioConnectorTestSuit_AccountDetails_Sequence.xml</file>
+    </artifact>
+    <artifact name="CreatioConnectorTestSuit_CaseDetails_Sequence" groupId="testsuit.creatioconnetor.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/CreatioConnectorTestSuit_CaseDetails_Sequence.xml</file>
+    </artifact>
+</artifacts>

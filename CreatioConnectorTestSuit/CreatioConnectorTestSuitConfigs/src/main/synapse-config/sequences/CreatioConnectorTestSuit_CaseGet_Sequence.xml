@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="CreatioConnectorTestSuit_CaseGet_Sequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <creatiocrm.caseGet>
+        <id>{$ctx:uri.var.id}</id>
+    </creatiocrm.caseGet>
+    <sequence key="CreatioConnectorTestSuit_CaseDetails_Sequence"/>
+</sequence>

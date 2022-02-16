@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/connectors" name="CreatioConnectorTestSuit" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST" uri-template="/contact">
+        <inSequence>
+            <sequence key="CreatioConnectorTestSuit_ContactCreate_Sequence"/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+    <resource methods="GET" uri-template="/contact/{id}">
+        <inSequence>
+            <sequence key="CreatioConnectorTestSuit_ContactGet_Sequence"/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+    <resource methods="PUT PATCH" uri-template="/contact/{id}">
+        <inSequence>
+            <sequence key="CreatioConnectorTestSuit_ContactUpdate_Sequence"/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+    <resource methods="DELETE" uri-template="/contact/{id}">
+        <inSequence>
+            <sequence key="CreatioConnectorTestSuit_ContactDelete_Sequence"/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+    <resource methods="GET" uri-template="/case/{id}">
+        <inSequence>
+            <sequence key="CreatioConnectorTestSuit_CaseGet_Sequence"/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+    <resource methods="POST" uri-template="/case">
+        <inSequence>
+            <sequence key="CreatioConnectorTestSuit_CaseCreate_Sequence"/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+    <resource methods="DELETE" uri-template="/case/{id}">
+        <inSequence>
+            <sequence key="CreatioConnectorTestSuit_CaseDelete_Sequence"/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+    <resource methods="PUT PATCH" uri-template="/case/{id}">
+        <inSequence>
+            <sequence key="CreatioConnectorTestSuit_CaseUpdate_Sequence"/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+    <resource methods="GET" uri-template="/account/{id}">
+        <inSequence>
+            <sequence key="CreatioConnectorTestSuit_AccountGet_Sequence"/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+    <resource methods="POST" uri-template="/account">
+        <inSequence>
+            <sequence key="CreatioConnectorTestSuit_AccountCreate_Sequence"/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+    <resource methods="DELETE" uri-template="/account/{id}">
+        <inSequence>
+            <sequence key="CreatioConnectorTestSuit_AccountDelete_Sequence"/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+    <resource methods="PUT PATCH" uri-template="/account/{id}">
+        <inSequence>
+            <sequence key="CreatioConnectorTestSuit_AccountUpdate_Sequence"/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

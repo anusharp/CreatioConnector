@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="CreatioConnectorTestSuit_AccountGet_Sequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <creatiocrm.accountGet>
+        <id>{$ctx:uri.var.id}</id>
+    </creatiocrm.accountGet>
+    <sequence key="CreatioConnectorTestSuit_AccountDetails_Sequence"/>
+</sequence>

@@ -1,0 +1,44 @@
+<unit-test>
+    <artifacts>
+        <test-artifact>
+            <artifact>/CreatioConnectorTestSuitConfigs/src/main/synapse-config/api/CreatioConnectorTestSuit.xml</artifact>
+        </test-artifact>
+        <supportive-artifacts>
+            <artifact>/CreatioConnectorTestSuitConfigs/src/main/synapse-config/sequences/CreatioConnectorTestSuit_ContactUpdate_Sequence.xml</artifact>
+        </supportive-artifacts>
+        <registry-resources/>
+        <connector-resources>
+            <connector-resource>/CreatioConnectorTestSuitConnectorExporter/creatiocrm-connector-1.1.0.zip</connector-resource>
+        </connector-resources>
+    </artifacts>
+    <test-cases>
+        <test-case name="ContactUpdate_API_TestCase">
+            <input>
+                <request-path>/contact/0880171e-b998-400b-af7e-62daa6fc5c4d</request-path>
+                <request-method>PUT</request-method>
+                <payload><![CDATA[{
+    "Name": "API Test",
+    "AccountId": "e6574af1-3e92-4099-958e-e798f52ee016",
+    "JobTitle": "Marketing manager",
+    "BirthDate": "0001-01-01T00:00:00Z",
+    "Phone": "",
+    "MobilePhone": "+1 213 566 34 22",
+    "Email": "test@gmail",
+    "Completeness": 30,
+    "Age": 19
+}]]></payload>
+                <properties>
+                    <property name="Content-Type" scope="transport" value="application/json"/>
+                </properties>
+            </input>
+            <assertions>
+                <assertEquals>
+                    <actual>$statusCode</actual>
+                    <expected><![CDATA[204]]></expected>
+                    <message>Contact Update Is Invalid</message>
+                </assertEquals>
+            </assertions>
+        </test-case>
+    </test-cases>
+    <mock-services/>
+</unit-test>
