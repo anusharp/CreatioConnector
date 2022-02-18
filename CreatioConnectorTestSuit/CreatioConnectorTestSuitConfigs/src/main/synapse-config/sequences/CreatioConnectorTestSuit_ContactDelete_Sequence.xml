@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="CreatioConnectorTestSuit_ContactDelete_Sequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <log level="full"/>
+    <creatiocrm.contactDelete>
+        <id>{$ctx:uri.var.id}</id>
+    </creatiocrm.contactDelete>
+    <respond/>
+</sequence>

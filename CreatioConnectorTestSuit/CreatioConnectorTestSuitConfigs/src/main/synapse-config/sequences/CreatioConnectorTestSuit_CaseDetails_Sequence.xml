@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="CreatioConnectorTestSuit_CaseDetails_Sequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <log level="full"/>
+    <payloadFactory media-type="json">
+        <format>{
+    "Number": "$1",
+    "RegisteredOn": "$2",
+    "Subject": "$3",
+    "Symptoms": "$4",
+    "Notes": "$5",
+    "AccountId": "$6",
+    "ContactId": "$7",
+    "SolutionRemains": $8
+}
+</format>
+        <args>
+            <arg evaluator="json" expression="$.Number"/>
+            <arg evaluator="json" expression="$.RegisteredOn"/>
+            <arg evaluator="json" expression="$.Subject"/>
+            <arg evaluator="json" expression="$.Symptoms"/>
+            <arg evaluator="json" expression="$.Notes"/>
+            <arg evaluator="json" expression="$.AccountId"/>
+            <arg evaluator="json" expression="$.ContactId"/>
+            <arg evaluator="json" expression="$.SolutionRemains"/>
+        </args>
+    </payloadFactory>
+    <respond/>
+</sequence>

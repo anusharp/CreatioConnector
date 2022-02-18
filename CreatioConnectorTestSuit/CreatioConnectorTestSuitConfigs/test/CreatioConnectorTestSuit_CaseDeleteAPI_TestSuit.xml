@@ -1,0 +1,33 @@
+<unit-test>
+    <artifacts>
+        <test-artifact>
+            <artifact>/CreatioConnectorTestSuitConfigs/src/main/synapse-config/api/CreatioConnectorTestSuit.xml</artifact>
+        </test-artifact>
+        <supportive-artifacts>
+            <artifact>/CreatioConnectorTestSuitConfigs/src/main/synapse-config/sequences/CreatioConnectorTestSuit_CaseDelete_Sequence.xml</artifact>
+        </supportive-artifacts>
+        <registry-resources/>
+        <connector-resources>
+            <connector-resource>/CreatioConnectorTestSuitConnectorExporter/creatiocrm-connector-1.1.0.zip</connector-resource>
+        </connector-resources>
+    </artifacts>
+    <test-cases>
+        <test-case name="CaseDelete_API_TestCase">
+            <input>
+                <request-path>/case/fd3acb36-20fd-4375-88e4-570f9bc7eefb</request-path>
+                <request-method>DELETE</request-method>
+                <properties>
+                    <property name="Content-Type" scope="transport" value="application/json"/>
+                </properties>
+            </input>
+            <assertions>
+                <assertEquals>
+                    <actual>$statusCode</actual>
+                    <expected><![CDATA[204]]></expected>
+                    <message>Case Delete Is Invalid</message>
+                </assertEquals>
+            </assertions>
+        </test-case>
+    </test-cases>
+    <mock-services/>
+</unit-test>

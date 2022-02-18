@@ -1,0 +1,50 @@
+<unit-test>
+    <artifacts>
+        <test-artifact>
+            <artifact>/CreatioConnectorTestSuitConfigs/src/main/synapse-config/api/CreatioConnectorTestSuit.xml</artifact>
+        </test-artifact>
+        <supportive-artifacts>
+            <artifact>/CreatioConnectorTestSuitConfigs/src/main/synapse-config/sequences/CreatioConnectorTestSuit_CaseCreate_Sequence.xml</artifact>
+        </supportive-artifacts>
+        <registry-resources/>
+        <connector-resources/>
+    </artifacts>
+    <test-cases>
+        <test-case name="CaseCreate_API_TestCase">
+            <input>
+                <request-path>/case/</request-path>
+                <request-method>POST</request-method>
+                <payload><![CDATA[{
+    "Number": "SR00000045",
+    "RegisteredOn": "2021-07-16T11:00:00Z",
+    "Subject": "Consultation on functionality",
+    "Symptoms": "Comparison of different DBMS in accordance with the customer's needs",
+    "Notes": "",
+    "AccountId": "ff7e089f-1fe9-4ca9-bc30-2d76ad39d178",
+    "ContactId": "00b34750-2feb-4545-b233-153502326f3c",
+    "SolutionRemains": 0.0
+}]]></payload>
+                <properties>
+                    <property name="Content-Type" scope="transport" value="application/json"/>
+                </properties>
+            </input>
+            <assertions>
+                <assertEquals>
+                    <actual>$body</actual>
+                    <expected><![CDATA[{
+    "Number": "SR00000045",
+    "RegisteredOn": "2021-07-16T11:00:00Z",
+    "Subject": "Consultation on functionality",
+    "Symptoms": "Comparison of different DBMS in accordance with the customer's needs",
+    "Notes": "",
+    "AccountId": "ff7e089f-1fe9-4ca9-bc30-2d76ad39d178",
+    "ContactId": "00b34750-2feb-4545-b233-153502326f3c",
+    "SolutionRemains": 0.0
+}]]></expected>
+                    <message>Case Create Is Invalid</message>
+                </assertEquals>
+            </assertions>
+        </test-case>
+    </test-cases>
+    <mock-services/>
+</unit-test>

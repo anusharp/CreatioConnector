@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="CreatioConnectorTestSuit_CaseCreate_Sequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <log level="full"/>
+    <creatiocrm.caseCreate/>
+    <sequence key="CreatioConnectorTestSuit_CaseDetails_Sequence"/>
+</sequence>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="CreatioConnectorTestSuit_CaseUpdate_Sequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <log level="full"/>
+    <creatiocrm.caseUpdate>
+        <id>{$ctx:uri.var.id}</id>
+    </creatiocrm.caseUpdate>
+    <sequence key="CreatioConnectorTestSuit_CaseDetails_Sequence"/>
+</sequence>

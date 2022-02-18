@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="CreatioConnectorTestSuit_ContactCreate_Sequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <log level="custom">
+        <property name="Test_Log" value="Before_CreateContact"/>
+    </log>
+    <creatiocrm.contactCreate/>
+    <sequence key="CreatioConnectorTestSuit_ContactDetails_Sequence"/>
+</sequence>
