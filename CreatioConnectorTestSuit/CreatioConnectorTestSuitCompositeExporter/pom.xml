@@ -35,8 +35,8 @@
     <testsuit.creatioconnetor.metadata_._CreatioConnectorTestSuit_swagger>capp/EnterpriseServiceBus</testsuit.creatioconnetor.metadata_._CreatioConnectorTestSuit_swagger>
     <testsuit.creatioconnetor.sequence_._CreatioConnectorTestSuit_CaseGet_Sequence>capp/EnterpriseServiceBus</testsuit.creatioconnetor.sequence_._CreatioConnectorTestSuit_CaseGet_Sequence>
     <testsuit.creatioconnetor.sequence_._CreatioConnectorTestSuit_CaseDetails_Sequence>capp/EnterpriseServiceBus</testsuit.creatioconnetor.sequence_._CreatioConnectorTestSuit_CaseDetails_Sequence>
-    <testsuit.creatioconnetor.sequence_._ContactUpdate>capp/EnterpriseServiceBus</testsuit.creatioconnetor.sequence_._ContactUpdate>
     <testsuit.creatioconnetor.sequence_._ContactDelete>capp/EnterpriseServiceBus</testsuit.creatioconnetor.sequence_._ContactDelete>
+    <testsuit.creatioconnetor.sequence_._ContactUpdate>capp/EnterpriseServiceBus</testsuit.creatioconnetor.sequence_._ContactUpdate>
   </properties>
   <dependencies>
     <dependency>

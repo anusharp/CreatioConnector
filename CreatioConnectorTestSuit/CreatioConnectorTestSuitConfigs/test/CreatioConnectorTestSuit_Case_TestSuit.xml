@@ -1,0 +1,120 @@
+<unit-test>
+    <artifacts>
+        <test-artifact>
+            <artifact>/CreatioConnectorTestSuitConfigs/src/main/synapse-config/api/CreatioConnectorTestSuit.xml</artifact>
+        </test-artifact>
+        <supportive-artifacts>
+            <artifact>/CreatioConnectorTestSuitConfigs/src/main/synapse-config/sequences/CreatioConnectorTestSuit_CaseGet_Sequence.xml</artifact>
+            <artifact>/CreatioConnectorTestSuitConfigs/src/main/synapse-config/sequences/CreatioConnectorTestSuit_CaseDelete_Sequence.xml</artifact>
+            <artifact>/CreatioConnectorTestSuitConfigs/src/main/synapse-config/sequences/CreatioConnectorTestSuit_CaseDetails_Sequence.xml</artifact>
+            <artifact>/CreatioConnectorTestSuitConfigs/src/main/synapse-config/sequences/CreatioConnectorTestSuit_CaseCreate_Sequence.xml</artifact>
+            <artifact>/CreatioConnectorTestSuitConfigs/src/main/synapse-config/sequences/CreatioConnectorTestSuit_CaseUpdate_Sequence.xml</artifact>
+        </supportive-artifacts>
+        <registry-resources/>
+        <connector-resources>
+            <connector-resource>/CreatioConnectorTestSuitConnectorExporter/creatiocrm-connector-1.1.0.zip</connector-resource>
+        </connector-resources>
+    </artifacts>
+    <test-cases>
+        <test-case name="CaseCreate_API_TestCase">
+            <input>
+                <request-path>/case/</request-path>
+                <request-method>POST</request-method>
+                <payload><![CDATA[{
+    "Number": "SR00000045",
+    "RegisteredOn": "2021-07-16T11:00:00Z",
+    "Subject": "Consultation on functionality",
+    "Symptoms": "Comparison of different DBMS in accordance with the customer's needs",
+    "Notes": "",
+    "AccountId": "ff7e089f-1fe9-4ca9-bc30-2d76ad39d178",
+    "ContactId": "00b34750-2feb-4545-b233-153502326f3c",
+    "SolutionRemains": 0.0
+}]]></payload>
+                <properties>
+                    <property name="Content-Type" scope="transport" value="application/json"/>
+                </properties>
+            </input>
+            <assertions>
+                <assertEquals>
+                    <actual>$body</actual>
+                    <expected><![CDATA[{
+    "Number": "SR00000045",
+    "RegisteredOn": "2021-07-16T11:00:00Z",
+    "Subject": "Consultation on functionality",
+    "Symptoms": "Comparison of different DBMS in accordance with the customer's needs",
+    "Notes": "",
+    "AccountId": "ff7e089f-1fe9-4ca9-bc30-2d76ad39d178",
+    "ContactId": "00b34750-2feb-4545-b233-153502326f3c",
+    "SolutionRemains": 0.0
+}]]></expected>
+                    <message>Case Create Is Invalid</message>
+                </assertEquals>
+            </assertions>
+        </test-case>
+        <test-case name="CaseGet_API_TestCase">
+            <input>
+                <request-path>/case/d22de2c8-bb08-4e8c-8d54-7f0ed896f4b8</request-path>
+                <request-method>GET</request-method>
+            </input>
+            <assertions>
+                <assertEquals>
+                    <actual>$body</actual>
+                    <expected><![CDATA[{
+    "Number": "SR00000045",
+    "RegisteredOn": "2021-07-16T12:00:00Z",
+    "Subject": "Consultation on functionality",
+    "Symptoms": "Comparison of different DBMS in accordance with the customer's needs",
+    "Notes": "",
+    "AccountId": "ff7e089f-1fe9-4ca9-bc30-2d76ad39d178",
+    "ContactId": "00b34750-2feb-4545-b233-153502326f3c",
+    "SolutionRemains": 0.0
+}]]></expected>
+                    <message>Case Get Is Invalid</message>
+                </assertEquals>
+            </assertions>
+        </test-case>
+        <test-case name="CaseUpdate_API_TestCase">
+            <input>
+                <request-path>/case/d22de2c8-bb08-4e8c-8d54-7f0ed896f4b8</request-path>
+                <request-method>PUT</request-method>
+                <payload><![CDATA[{
+    "Number": "SR00000045",
+    "RegisteredOn": "2021-07-16T11:00:00Z",
+    "Subject": "Consultation on functionality",
+    "Symptoms": "Comparison of different DBMS in accordance with the customer's needs",
+    "Notes": "",
+    "AccountId": "ff7e089f-1fe9-4ca9-bc30-2d76ad39d178",
+    "ContactId": "00b34750-2feb-4545-b233-153502326f3c",
+    "SolutionRemains": 0.0
+}]]></payload>
+                <properties>
+                    <property name="Content-Type" scope="transport" value="application/json"/>
+                </properties>
+            </input>
+            <assertions>
+                <assertEquals>
+                    <actual>$statusCode</actual>
+                    <expected><![CDATA[204]]></expected>
+                    <message>Case Update Is Invalid</message>
+                </assertEquals>
+            </assertions>
+        </test-case>
+        <test-case name="CaseDelete_API_TestCase">
+            <input>
+                <request-path>/case/fd3acb36-20fd-4375-88e4-570f9bc7eefb</request-path>
+                <request-method>DELETE</request-method>
+                <properties>
+                    <property name="Content-Type" scope="transport" value="application/json"/>
+                </properties>
+            </input>
+            <assertions>
+                <assertEquals>
+                    <actual>$statusCode</actual>
+                    <expected><![CDATA[204]]></expected>
+                    <message>Case Delete Is Invalid</message>
+                </assertEquals>
+            </assertions>
+        </test-case>
+    </test-cases>
+    <mock-services/>
+</unit-test>
