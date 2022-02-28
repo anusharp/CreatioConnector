@@ -1,0 +1,141 @@
+<unit-test>
+    <artifacts>
+        <test-artifact>
+            <artifact>/CreatioConnectorTestSuitConfigs/src/main/synapse-config/api/CreatioConnectorTestSuit.xml</artifact>
+        </test-artifact>
+        <supportive-artifacts>
+            <artifact>/CreatioConnectorTestSuitConfigs/src/main/synapse-config/sequences/CreatioConnectorTestSuit_CaseGet_Sequence.xml</artifact>
+            <artifact>/CreatioConnectorTestSuitConfigs/src/main/synapse-config/sequences/CreatioConnectorTestSuit_ContactCreate_Sequence.xml</artifact>
+            <artifact>/CreatioConnectorTestSuitConfigs/src/main/synapse-config/sequences/CreatioConnectorTestSuit_AccountDelete_Sequence.xml</artifact>
+            <artifact>/CreatioConnectorTestSuitConfigs/src/main/synapse-config/sequences/CreatioConnectorTestSuit_ContactDetails_Sequence.xml</artifact>
+            <artifact>/CreatioConnectorTestSuitConfigs/src/main/synapse-config/sequences/CreatioConnectorTestSuit_ContactUpdate_Sequence.xml</artifact>
+            <artifact>/CreatioConnectorTestSuitConfigs/src/main/synapse-config/sequences/CreatioConnectorTestSuit_AccountGet_Sequence.xml</artifact>
+            <artifact>/CreatioConnectorTestSuitConfigs/src/main/synapse-config/sequences/CreatioConnectorTestSuit_AccountCreate_Sequence.xml</artifact>
+            <artifact>/CreatioConnectorTestSuitConfigs/src/main/synapse-config/sequences/CreatioConnectorTestSuit_ContactGet_Sequence.xml</artifact>
+            <artifact>/CreatioConnectorTestSuitConfigs/src/main/synapse-config/sequences/CreatioConnectorTestSuit_AccountDetails_Sequence.xml</artifact>
+            <artifact>/CreatioConnectorTestSuitConfigs/src/main/synapse-config/sequences/CreatioConnectorTestSuit_CaseDelete_Sequence.xml</artifact>
+            <artifact>/CreatioConnectorTestSuitConfigs/src/main/synapse-config/sequences/CreatioConnectorTestSuit_AccountUpdate_Sequence.xml</artifact>
+            <artifact>/CreatioConnectorTestSuitConfigs/src/main/synapse-config/sequences/CreatioConnectorTestSuit_ContactDelete_Sequence.xml</artifact>
+            <artifact>/CreatioConnectorTestSuitConfigs/src/main/synapse-config/sequences/CreatioConnectorTestSuit_CaseDetails_Sequence.xml</artifact>
+            <artifact>/CreatioConnectorTestSuitConfigs/src/main/synapse-config/sequences/CreatioConnectorTestSuit_CaseCreate_Sequence.xml</artifact>
+            <artifact>/CreatioConnectorTestSuitConfigs/src/main/synapse-config/sequences/CreatioConnectorTestSuit_CaseUpdate_Sequence.xml</artifact>
+        </supportive-artifacts>
+        <registry-resources/>
+        <connector-resources>
+            <connector-resource>/CreatioConnectorTestSuitConnectorExporter/creatiocrm-connector-1.1.0.zip</connector-resource>
+            <connector-resource>/CreatioConnectorTestSuitConnectorExporter/creatiocrm-connector-1.1.0.zip</connector-resource>
+            <connector-resource>/CreatioConnectorTestSuitConnectorExporter/creatiocrm-connector-1.1.0.zip</connector-resource>
+            <connector-resource>/CreatioConnectorTestSuitConnectorExporter/creatiocrm-connector-1.1.0.zip</connector-resource>
+            <connector-resource>/CreatioConnectorTestSuitConnectorExporter/creatiocrm-connector-1.1.0.zip</connector-resource>
+            <connector-resource>/CreatioConnectorTestSuitConnectorExporter/creatiocrm-connector-1.1.0.zip</connector-resource>
+            <connector-resource>/CreatioConnectorTestSuitConnectorExporter/creatiocrm-connector-1.1.0.zip</connector-resource>
+            <connector-resource>/CreatioConnectorTestSuitConnectorExporter/creatiocrm-connector-1.1.0.zip</connector-resource>
+        </connector-resources>
+    </artifacts>
+    <test-cases>
+        <test-case name="ContactCreate_API_TestCase">
+            <input>
+                <request-path>/contact/</request-path>
+                <request-method>POST</request-method>
+                <payload><![CDATA[{
+    "Name": "API Test",
+    "AccountId": "e6574af1-3e92-4099-958e-e798f52ee016",
+    "JobTitle": "Marketing manager",
+    "BirthDate": "0001-01-01T00:00:00Z",
+    "Phone": "",
+    "MobilePhone": "+1 213 566 34 22",
+    "Email": "test@gmail",
+    "Completeness": 30,
+    "Age": 19
+}]]></payload>
+                <properties>
+                    <property name="Content-Type" scope="transport" value="application/json"/>
+                </properties>
+            </input>
+            <assertions>
+                <assertEquals>
+                    <actual>$body</actual>
+                    <expected><![CDATA[{
+    "Name": "API Test",
+    "AccountId": "e6574af1-3e92-4099-958e-e798f52ee016",
+    "JobTitle": "Marketing manager",
+    "BirthDate": "0001-01-01T00:00:00Z",
+    "Phone": "",
+    "MobilePhone": +1 213 566 34 22,
+    "Email": "test@gmail",
+    "Completeness": 30,
+    "Age": 19
+}]]></expected>
+                    <message>Contact Create Is Invalid</message>
+                </assertEquals>
+            </assertions>
+        </test-case>
+        <test-case name="ContactGet_API_TestCase">
+            <input>
+                <request-path>/contact/0880171e-b998-400b-af7e-62daa6fc5c4d</request-path>
+                <request-method>GET</request-method>
+            </input>
+            <assertions>
+                <assertEquals>
+                    <actual>$body</actual>
+                    <expected><![CDATA[{
+    "Name": "API Test",
+    "AccountId": "e6574af1-3e92-4099-958e-e798f52ee016",
+    "JobTitle": "Marketing manager",
+    "BirthDate": "0001-01-01T00:00:00Z",
+    "Phone": "",
+    "MobilePhone": +1 213 566 34 22,
+    "Email": "test@gmail",
+    "Completeness": 30,
+    "Age": 19
+}]]></expected>
+                    <message>Contact Get Is Invalid</message>
+                </assertEquals>
+            </assertions>
+        </test-case>
+        <test-case name="ContactUpdate_API_TestCase">
+            <input>
+                <request-path>/contact/0880171e-b998-400b-af7e-62daa6fc5c4d</request-path>
+                <request-method>PUT</request-method>
+                <payload><![CDATA[{
+    "Name": "API Test",
+    "AccountId": "e6574af1-3e92-4099-958e-e798f52ee016",
+    "JobTitle": "Marketing manager",
+    "BirthDate": "0001-01-01T00:00:00Z",
+    "Phone": "",
+    "MobilePhone": "+1 213 566 34 22",
+    "Email": "test@gmail",
+    "Completeness": 30,
+    "Age": 19
+}]]></payload>
+                <properties>
+                    <property name="Content-Type" scope="transport" value="application/json"/>
+                </properties>
+            </input>
+            <assertions>
+                <assertEquals>
+                    <actual>$statusCode</actual>
+                    <expected><![CDATA[204]]></expected>
+                    <message>Contact Update Is Invalid</message>
+                </assertEquals>
+            </assertions>
+        </test-case>
+        <test-case name="ContactDelete_API_TestCase">
+            <input>
+                <request-path>/contact/86b17167-4994-4f31-8e6f-4cf58d3d82d2</request-path>
+                <request-method>DELETE</request-method>
+                <properties>
+                    <property name="Content-Type" scope="transport" value="application/json"/>
+                </properties>
+            </input>
+            <assertions>
+                <assertEquals>
+                    <actual>$statusCode</actual>
+                    <expected><![CDATA[204]]></expected>
+                    <message>Contact Delete Is Invalid</message>
+                </assertEquals>
+            </assertions>
+        </test-case>
+    </test-cases>
+    <mock-services/>
+</unit-test>

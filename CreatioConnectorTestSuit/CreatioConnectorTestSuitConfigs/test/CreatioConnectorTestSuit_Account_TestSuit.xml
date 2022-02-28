@@ -1,0 +1,124 @@
+<unit-test>
+    <artifacts>
+        <test-artifact>
+            <artifact>/CreatioConnectorTestSuitConfigs/src/main/synapse-config/api/CreatioConnectorTestSuit.xml</artifact>
+        </test-artifact>
+        <supportive-artifacts>
+            <artifact>/CreatioConnectorTestSuitConfigs/src/main/synapse-config/sequences/CreatioConnectorTestSuit_AccountGet_Sequence.xml</artifact>
+            <artifact>/CreatioConnectorTestSuitConfigs/src/main/synapse-config/sequences/CreatioConnectorTestSuit_AccountCreate_Sequence.xml</artifact>
+            <artifact>/CreatioConnectorTestSuitConfigs/src/main/synapse-config/sequences/CreatioConnectorTestSuit_AccountDetails_Sequence.xml</artifact>
+            <artifact>/CreatioConnectorTestSuitConfigs/src/main/synapse-config/sequences/CreatioConnectorTestSuit_AccountUpdate_Sequence.xml</artifact>
+            <artifact>/CreatioConnectorTestSuitConfigs/src/main/synapse-config/sequences/CreatioConnectorTestSuit_AccountDelete_Sequence.xml</artifact>
+        </supportive-artifacts>
+        <registry-resources/>
+        <connector-resources>
+            <connector-resource>/CreatioConnectorTestSuitConnectorExporter/creatiocrm-connector-1.1.0.zip</connector-resource>
+        </connector-resources>
+    </artifacts>
+    <test-cases>
+        <test-case name="CaseCreate_API_TestCase">
+            <input>
+                <request-path>/account/</request-path>
+                <request-method>POST</request-method>
+                <payload><![CDATA[{
+    "Name": "API Test",
+    "ProcessListeners": 0,
+    "Code": "73",
+    "Phone": "+1 206 480 3801",
+    "AdditionalPhone": "+1 206 480 4495",
+    "Fax": "",
+    "Web": "www.infocom-global.com",
+    "Address": "48 Pilgrim Street",
+    "Notes": ""
+}]]></payload>
+                <properties>
+                    <property name="Content-Type" scope="transport" value="application/json"/>
+                </properties>
+            </input>
+            <assertions>
+                <assertEquals>
+                    <actual>$body</actual>
+                    <expected><![CDATA[{
+    "Name": "API Test",
+    "ProcessListeners": 0,
+    "Code": "73",
+    "Phone": "+1 206 480 3801",
+    "AdditionalPhone": "+1 206 480 4495",
+    "Fax": "",
+    "Web": "www.infocom-global.com",
+    "Address": "48 Pilgrim Street",
+    "Notes": ""
+}]]></expected>
+                    <message>Account Create Is Invalid</message>
+                </assertEquals>
+            </assertions>
+        </test-case>
+        <test-case name="AccountGet_API_TestCase">
+            <input>
+                <request-path>/account/15d09e63-e43b-4241-8100-35dc9a377f4d</request-path>
+                <request-method>GET</request-method>
+            </input>
+            <assertions>
+                <assertEquals>
+                    <actual>$body</actual>
+                    <expected><![CDATA[{
+    "Name": "API Test",
+    "ProcessListeners": 0,
+    "Code": "85",
+    "Phone": "+1 206 480 3801",
+    "AdditionalPhone": "+1 206 480 4495",
+    "Fax": "",
+    "Web": "www.infocom-global.com",
+    "Address": "48 Pilgrim Street",
+    "Notes": ""
+}]]></expected>
+                    <message>Account Get Is Invalid</message>
+                </assertEquals>
+            </assertions>
+        </test-case>
+        <test-case name="AccountUpdate_API_TestCase">
+            <input>
+                <request-path>/account/15d09e63-e43b-4241-8100-35dc9a377f4d</request-path>
+                <request-method>PUT</request-method>
+                <payload><![CDATA[{
+    "Name": "API Test",
+    "ProcessListeners": 0,
+    "Code": "85",
+    "Phone": "+1 206 480 3801",
+    "AdditionalPhone": "+1 206 480 4495",
+    "Fax": "",
+    "Web": "www.infocom-global.com",
+    "Address": "48 Pilgrim Street",
+    "Notes": ""
+}]]></payload>
+                <properties>
+                    <property name="Content-Type" scope="transport" value="application/json"/>
+                </properties>
+            </input>
+            <assertions>
+                <assertEquals>
+                    <actual>$statusCode</actual>
+                    <expected><![CDATA[204]]></expected>
+                    <message>Account Update Is Invalid</message>
+                </assertEquals>
+            </assertions>
+        </test-case>
+        <test-case name="AccountDelete_API_TestCase">
+            <input>
+                <request-path>/account/a569c674-9dd7-4ab7-ab78-a5152e4988c6</request-path>
+                <request-method>DELETE</request-method>
+                <properties>
+                    <property name="Content-Type" scope="transport" value="application/json"/>
+                </properties>
+            </input>
+            <assertions>
+                <assertEquals>
+                    <actual>$statusCode</actual>
+                    <expected><![CDATA[204]]></expected>
+                    <message>Account Delete Is Invalid</message>
+                </assertEquals>
+            </assertions>
+        </test-case>
+    </test-cases>
+    <mock-services/>
+</unit-test>
