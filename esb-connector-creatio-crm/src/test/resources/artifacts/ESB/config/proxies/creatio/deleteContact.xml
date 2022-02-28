@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxy xmlns="http://ws.apache.org/ns/synapse"
+       name="deleteContact"
+       startOnLoad="true"
+       statistics="disable"
+       trace="disable"
+       transports="http,https">
+<target>
+    <inSequence>
+        <property expression="json-eval($.contactId)" name="contactId"/>
+        <creatiocrm.contactDelete>
+            <id>{$ctx:contactId}</id>
+        </creatiocrm.contactDelete>
+        <respond/>
+    </inSequence>
+    <outSequence/>
+    <faultSequence/>
+</target>
+<description/>
+</proxy>

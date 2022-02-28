@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxy xmlns="http://ws.apache.org/ns/synapse"
+       name="deleteCase"
+       startOnLoad="true"
+       statistics="disable"
+       trace="disable"
+       transports="http,https">
+    <target>
+        <inSequence>
+            <property expression="json-eval($.caseId)" name="caseId"/>
+            <creatiocrm.caseDelete>
+                <id>{$ctx:caseId}</id>
+            </creatiocrm.caseDelete>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </target>
+    <description/>
+</proxy>
+

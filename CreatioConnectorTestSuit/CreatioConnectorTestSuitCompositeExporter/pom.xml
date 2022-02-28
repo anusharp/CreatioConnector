@@ -14,8 +14,8 @@
   <name>CreatioConnectorTestSuitCompositeExporter</name>
   <description>CreatioConnectorTestSuitCompositeExporter</description>
   <properties>
-    <testsuit.creatioconnetor.sequence_._CreatioConnectorTestSuit_AccountCreate_Sequence>capp/EnterpriseServiceBus</testsuit.creatioconnetor.sequence_._CreatioConnectorTestSuit_AccountCreate_Sequence>
     <testsuit.creatioconnetor.sequence_._CreatioConnectorTestSuit_ContactDelete_Sequence>capp/EnterpriseServiceBus</testsuit.creatioconnetor.sequence_._CreatioConnectorTestSuit_ContactDelete_Sequence>
+    <testsuit.creatioconnetor.sequence_._CreatioConnectorTestSuit_AccountCreate_Sequence>capp/EnterpriseServiceBus</testsuit.creatioconnetor.sequence_._CreatioConnectorTestSuit_AccountCreate_Sequence>
     <testsuit.creatioconnetor.lib_._creatiocrm-connector>capp/EnterpriseServiceBus</testsuit.creatioconnetor.lib_._creatiocrm-connector>
     <testsuit.creatioconnetor.sequence_._AccountUpdate>capp/EnterpriseServiceBus</testsuit.creatioconnetor.sequence_._AccountUpdate>
     <testsuit.creatioconnetor.sequence_._CreatioConnectorTestSuit_CaseCreate_Sequence>capp/EnterpriseServiceBus</testsuit.creatioconnetor.sequence_._CreatioConnectorTestSuit_CaseCreate_Sequence>
@@ -35,8 +35,8 @@
     <testsuit.creatioconnetor.metadata_._CreatioConnectorTestSuit_swagger>capp/EnterpriseServiceBus</testsuit.creatioconnetor.metadata_._CreatioConnectorTestSuit_swagger>
     <testsuit.creatioconnetor.sequence_._CreatioConnectorTestSuit_CaseGet_Sequence>capp/EnterpriseServiceBus</testsuit.creatioconnetor.sequence_._CreatioConnectorTestSuit_CaseGet_Sequence>
     <testsuit.creatioconnetor.sequence_._CreatioConnectorTestSuit_CaseDetails_Sequence>capp/EnterpriseServiceBus</testsuit.creatioconnetor.sequence_._CreatioConnectorTestSuit_CaseDetails_Sequence>
-    <testsuit.creatioconnetor.sequence_._ContactUpdate>capp/EnterpriseServiceBus</testsuit.creatioconnetor.sequence_._ContactUpdate>
     <testsuit.creatioconnetor.sequence_._ContactDelete>capp/EnterpriseServiceBus</testsuit.creatioconnetor.sequence_._ContactDelete>
+    <testsuit.creatioconnetor.sequence_._ContactUpdate>capp/EnterpriseServiceBus</testsuit.creatioconnetor.sequence_._ContactUpdate>
   </properties>
   <dependencies>
     <dependency>

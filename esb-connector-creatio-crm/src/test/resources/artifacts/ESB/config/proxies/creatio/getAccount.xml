@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxy xmlns="http://ws.apache.org/ns/synapse"
+       name="getAccount"
+       startOnLoad="true"
+       statistics="disable"
+       trace="disable"
+       transports="http,https">
+    <target>
+        <inSequence>
+            <property expression="json-eval($.accountId)" name="accountId"/>
+            <creatiocrm.accountGet>
+                <id>{$ctx:accountId}</id>
+            </creatiocrm.accountGet>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </target>
+    <description/>
+</proxy>

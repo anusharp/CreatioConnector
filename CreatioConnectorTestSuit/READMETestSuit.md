@@ -83,6 +83,6 @@ Follow the steps given below to run the unit test suit
 
 2. Run the CretioConnectorTestSuitCompositeExporter on the WSO2 Enterprise MI 1.2.0 server
 
-3. Run Unit test suit 
+3. Run Unit test suit through the Integration Studio
 
 

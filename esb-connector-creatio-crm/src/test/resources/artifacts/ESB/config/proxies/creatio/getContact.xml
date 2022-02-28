@@ -1,0 +1,19 @@
+<proxy xmlns="http://ws.apache.org/ns/synapse"
+       name="getContact"
+       startOnLoad="true"
+       statistics="disable"
+       trace="disable"
+       transports="http,https">
+<target>
+    <inSequence>
+        <property expression="json-eval($.contactId)" name="contactId"/>
+        <creatiocrm.contactGet>
+            <id>{$ctx:contactId}</id>
+        </creatiocrm.contactGet>
+        <respond/>
+    </inSequence>
+    <outSequence/>
+    <faultSequence/>
+</target>
+<description/>
+</proxy>

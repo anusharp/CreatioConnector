@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxy xmlns="http://ws.apache.org/ns/synapse"
+       name="updateCase"
+       startOnLoad="true"
+       statistics="disable"
+       trace="disable"
+       transports="http,https">
+    <target>
+        <inSequence>
+            <property expression="json-eval($.caseId)" name="caseId"/>
+            <creatiocrm.caseUpdate>
+                <id>{$ctx:caseId}</id>
+            </creatiocrm.caseUpdate>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </target>
+    <description/>
+</proxy>
