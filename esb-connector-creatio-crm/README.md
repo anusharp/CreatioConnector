@@ -10,7 +10,7 @@ Case CRUD operation
 
 | Connector version | Supported Creatio REST API version | Supported WSO2 ESB/EI version |
 | ------------- | ------------- | ------------- |
-| [1.0.0]| v32.0 | EI 7.0.X, EI 7.1.0 |
+| [1.0.0]| v32.0 | EI 6.5.0, EI 7.0.X, EI 7.1.0 |
 
 ## Getting started
 
@@ -18,13 +18,13 @@ Case CRUD operation
 
 Follow the steps given below to build the Creatio REST connector from the source code:
 
-1. Get a clone or download the source from [Github](https://github.com/MitraInnovationRepo/wso2-connectors/).
+1. Get a clone or download the source from [Github](https://github.com/anusharp/CreatioConnector).
 2. Run the following Maven command from the `esb-connector-creatiocrm` directory: `mvn clean install`.
 3. The Creatio connector zip file is created in the `esb-connector-creatiocrm/target` directory
 
 Follow the steps given below to build the Class mediation which is dependency library:
 
-1. Get a clone or download the source from [Github](https://github.com/MitraInnovationRepo/wso2-connectors/).
+1. Get a clone or download the source from [Github](https://github.com/anusharp/CreatioConnector).
 2. Run the following Maven command from the `CookieMediator` directory: `mvn clean install`.
 3. Copy the CookieMediator-1.0.0-SNAPSHOT.jar into <EI-HOME>/micro-integrator/dropins directory
 
@@ -73,6 +73,13 @@ isEncryptedCreatioConfig = "true"
 creatioCRMUName  = "[admin]"
 creatioCRMPWord  = "[1qaz2wsx&]"
 creatioCRMEP = "[https://112744-crm-bundle.creatio.com]"
+
+If you are going to use in EI 6.5.0, you need to update below format as system properties in <product_location>/bin/integrator.sh 
+   
+    -DisEncryptedCreatioConfig="false" \
+    -DcreatioCRMUName="AdminUser" \
+    -DcreatioCRMPWord="AdminUser" \
+    -DcreatioCRMEP="https://creatio.com" \
 
 5. isEncryptedCreatioConfig = true", then execute the below command encrypt the above config values (at first time only)./ciphertool.sh -Dconfigure, provide the password of wso2carbon.jks, default value is 'wso2carbon' if encrypted values need to be configured.
 
