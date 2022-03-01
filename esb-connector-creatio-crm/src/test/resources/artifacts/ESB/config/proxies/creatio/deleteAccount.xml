@@ -7,9 +7,16 @@
        transports="http,https">
     <target>
         <inSequence>
-            <property expression="json-eval($.accountId)" name="accountId"/>
+            <property name="accountId" expression="get-property('axis2', 'REST_URL_POSTFIX')"/>
+            <log description="config" level="custom">
+                <property expression="$ctx:accountId" name="accountId......."/>
+            </log>
+            <property expression="fn:substring($ctx:accountId, 12,36)" name="id" scope="default" type="STRING"/>
+            <log description="config" level="custom">
+                <property expression="$ctx:id" name="id......."/>
+            </log>
             <creatiocrm.accountDelete>
-                <id>{$ctx:accountId}</id>
+                <id>{$ctx:id}</id>
             </creatiocrm.accountDelete>
             <respond/>
         </inSequence>
